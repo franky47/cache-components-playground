@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -22,5 +22,123 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  /* page */
+  html {
+    @apply text-base leading-relaxed antialiased;
+  }
+  body {
+    @apply p-4 font-sans;
+  }
+
+  /* headings */
+  h1 {
+    @apply mt-8 mb-4 text-3xl font-extrabold tracking-tight leading-tight;
+  }
+  h2 {
+    @apply mt-8 mb-3 text-2xl font-bold tracking-tight leading-snug;
+  }
+  h3 {
+    @apply mt-6 mb-2 text-xl font-semibold leading-snug;
+  }
+  h4 {
+    @apply mt-5 mb-2 text-lg font-semibold;
+  }
+  h5 {
+    @apply mt-4 mb-1 text-base font-medium;
+  }
+  h6 {
+    @apply mt-3 mb-1 text-sm font-medium uppercase tracking-wide;
+  }
+
+  /* paragraphs */
+  p {
+    @apply mb-4 max-w-none;
+  }
+
+  /* links */
+  a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+  }
+  a:focus {
+    @apply outline-none ring-2 ring-blue-300;
+  }
+
+  /* lists */
+  ul,
+  ol {
+    @apply mb-4 pl-6;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  li {
+    @apply mb-2;
+  }
+
+  /* blockquote */
+  blockquote {
+    @apply my-6 pl-4 border-l-4 border-zinc-300 italic;
+  }
+
+  /* code & pre */
+  code {
+    @apply bg-zinc-100 px-1 py-0.5 rounded text-sm font-mono;
+  }
+  pre {
+    @apply my-4 p-4 rounded overflow-x-auto font-mono text-sm bg-zinc-900 text-zinc-100;
+  }
+
+  /* images & figures */
+  img {
+    @apply max-w-full h-auto;
+  }
+  figure {
+    @apply my-6;
+  }
+  figcaption {
+    @apply text-sm text-zinc-600 mt-2;
+  }
+
+  /* table */
+  table {
+    @apply w-full table-auto border-collapse my-6 text-sm;
+  }
+  thead th {
+    @apply text-left font-semibold border-b pb-2;
+  }
+  tbody td {
+    @apply border-b py-2;
+  }
+
+  /* form elements (basic sensible defaults) */
+  input,
+  textarea,
+  select,
+  button {
+    @apply font-sans rounded-md border-zinc-300 focus:outline-none focus:ring-2 focus:ring-blue-300;
+  }
+
+  /* small and fine text */
+  small {
+    @apply text-sm text-zinc-600;
+  }
+
+  /* horizontal rule */
+  hr {
+    @apply my-6 border-t border-zinc-200;
+  }
+
+  /* details/summary (accessible defaults) */
+  summary {
+    @apply cursor-pointer list-none font-medium;
+  }
+  details[open] summary {
+    @apply mb-2;
+  }
 }
