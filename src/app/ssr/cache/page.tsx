@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Filters } from "../client";
 import { filtersCache } from "../search-params";
 
-export default async function Page({ searchParams }: PageProps<"/ssr-nuqs">) {
+export default async function Page({ searchParams }: PageProps<"/ssr/cache">) {
   filtersCache.parse(searchParams); // Preload cache
   return (
     <div>

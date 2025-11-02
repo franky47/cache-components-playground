@@ -2,7 +2,9 @@ import { Suspense } from "react";
 import { Filters } from "../client";
 import { type FiltersType, loadFilters } from "../search-params";
 
-export default async function Page({ searchParams }: PageProps<"/ssr-nuqs">) {
+export default async function Page({
+  searchParams,
+}: PageProps<"/ssr/prop-drilling">) {
   const filters = loadFilters(searchParams);
   return (
     <div>
