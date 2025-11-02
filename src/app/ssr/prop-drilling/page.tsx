@@ -9,15 +9,13 @@ export default async function Page({
   return (
     <div>
       <h1>SSR with prop drilling parsed search params</h1>
-      <p>
-        This throws the "Uncached data accessed outside of Suspense" for the
-        UseCachePrivate component, but only in the console, no overlay, and
-        fails the prod build.
-      </p>
       <Suspense>
         <Dynamic filters={filters} />
       </Suspense>
-      <UseCachePrivate filters={filters} />
+      <Suspense>
+        {/* This still needs to be wrapped in Suspense */}
+        <UseCachePrivate filters={filters} />
+      </Suspense>
       <Suspense>
         <Filters />
       </Suspense>
