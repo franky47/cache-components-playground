@@ -2,6 +2,7 @@
   "name": "cache-components-playground",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +11,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "motion": "^12.23.24",
     "next": "16.0.1",
     "nuqs": "^2.7.2",
     "react": "19.2.0",

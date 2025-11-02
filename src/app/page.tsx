@@ -1,3 +1,11 @@
+import { Suspense } from "react";
+import { Timeline } from "./components/timeline/timeline";
+
 export default function Home() {
-  return <h1>Next.js 16 w/ cacheComponents + nuqs</h1>;
+  return (
+    <Suspense>
+      <Timeline />
+      {/* <InteractiveTimeline /> */}
+    </Suspense>
+  );
 }
